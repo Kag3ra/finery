@@ -1,27 +1,48 @@
-#rad{
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    text-decoration-line:underline;
-    
+#rad {
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  text-decoration-line: underline;
 }
 
-ul{
-    list-style-type: none;
-    text-align:left;
+ul {
+  list-style-type: none;
+  text-align: left;
 }
-
 
 .form-container {
-    box-shadow: 0 0 10px rgba(134, 0, 0, 0.5);
-    width: 250px;
-    height: 110px;
-    border-radius: 10px;
-    
-  }
+  box-shadow: 0 0 10px rgba(134, 0, 0, 0.5);
+  width: 300px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  flex-direction: column;
+}
 
-  #uno{
-    height: 1opx;
-    text-align: center;
-  }
+.form-container > select {
+  margin-bottom: 10px;
+  padding: 5%;
+  width: 100%;
+  border-radius: 10px;
+}
 
+.form-container > label {
+  font-size: larger;
+  margin-bottom: 10px;
+}
+.form-container > button {
+  padding: 1rem;
+  background-color: pink;
+  border-radius: 10px;
+  width: 100%;
+}
 
+#uno {
+  height: 10px;
+  text-align: center;
+}
+
+.catalogueType,
+.catalogueColor {
+  text-transform: capitalize;
+}

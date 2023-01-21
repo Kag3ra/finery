@@ -1,68 +1,40 @@
-      // Create an object to store the colors
-      const colors = {
-        red: [],
-        green: [],
-        blue: [],
-        brown: [],
-        white: [],
-        green: [],
-        beige: [],
-        other: [],
-      };
+const catalogue = document.getElementById("catalogue");
+const selections = [];
+const allTypes = [
+  "pants",
+  "shirts",
+  "jackets",
+  "headwear",
+  "shorts",
+  "socks",
+  "tees",
+  "shoes",
+];
+const allColors = ["red", "green", "blue", "brown", "white", "beige", "other"];
 
-      //Create an object to store types
-      const types = {
-        pants: [],
-        shirts: [],
-        jackets: [],
-        headwear: [],
-        shorts: [],
-        socks: [],
-        tees: [],
-        shoes: [],
-      }
+document.getElementById("colorSelect").innerHTML += allColors
+  .map((col) => `<option>${col}</option>`)
+  .join(" ");
+document.getElementById("typeSelect").innerHTML += allTypes
+  .map((typ) => `<option>${typ}</option>`)
+  .join(" ");
 
-      // Get the form and catalogue elements
-      const form = document.querySelector("#form");
-      const catalogue = document.querySelector("#catalogue");
+UpdateCatalogue();
 
-      // Add a submit event listener to the form
-      form.addEventListener("submit", (event) => {
-        // Prevent the form from submitting
-        event.preventDefault();
+function AddCloth(event) {
+  event.preventDefault();
+  const typ = event.target["type"].value;
+  const col = event.target["color"].value;
+  selections.push({ type: typ, color: col });
+  UpdateCatalogue()
+}
 
-        // Get the type and color input values
-        const type = document.querySelector("#type").value;
-        const color = document.querySelector("#color").value;
-
-        // Add the clothing to the appropriate category
-        var colorArray = {};
-        var form = document.getElementById('form');
-        form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const colors = document.getElementById('color').value;
-    const type = document.getElementById('type').value;
-    if (colorArray[colors]) {colorArray[colors] = []; 
-    colorArray[colors].push(type);
-    }  else {
-            colors.other.push(type);
-          }
-    
-});
-
-        // Clear the form input values
-        document.querySelector("#type").value = "";
-        document.querySelector("#color").value = "";
-
-        // Update the catalogue
-        catalogue.innerHTML = `
-          <p>Red clothing: ${colors.red.join(", ")}</p>
-          <p>Green clothing: ${colors.green.join(", ")}</p>
-          <p>Blue clothing: ${colors.blue.join(", ")}</p>
-          <p>Brown clothing: ${colors.brown.join(", ")}</p>
-          <p>White clothing: ${colors.white.join(", ")}</p>
-          <p>Green clothing: ${colors.green.join(", ")}</p>
-          <p>Beige clothing: ${colors.beige.join(", ")}</p>
-          <p>Other clothing: ${colors.other.join(", ")}</p>
-        `;
-      });
+function UpdateCatalogue() {
+  catalogue.innerHTML = "";
+  allColors.forEach((color) => {
+    catalogue.innerHTML += `<b class="catalogueColor">${color} Clothing:</b> ${selections
+      .filter((cloth) => cloth.color == color)
+      .map((cloth) => `<span class="catalogueType">${cloth.type}</span>`)
+      .join(", ")}<br/>`;
+  });
+}

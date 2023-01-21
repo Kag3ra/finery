@@ -12,19 +12,18 @@
     </p>
 
     <p>How's your wardrobe looking?</p>
-    <div class="form-container">
-    <form id="form">
-      <ul>
-        <li><label for="type">Type:</label></li>
-        <input type="text" id="type" name="type" />
-        <li><label for="color">Color:</label></li>
-        <input type="text" id="color" name="color" />
-        <button type="submit">Add</button>
-      </ul>
+
+    <form id="form" class="form-container" onsubmit="AddCloth(event)">
+      <label for="type">Type:</label>
+      <select name="type" id="typeSelect" required></select>
+      <label for="color">Color:</label>
+      <select name="color" id="colorSelect" required></select>
+      <button type="submit">Add</button>
     </form>
-    </div>
+
     <h2>Clothing Catalogue</h2>
     <div id="catalogue"></div>
-    <script src="rags.js"></script>
   </body>
+
+  <script type="text/javascript" src="rags.js"></script>
 </html>
