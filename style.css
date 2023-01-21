@@ -1,0 +1,27 @@
+#rad{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-decoration-line:underline;
+    
+}
+
+ul{
+    list-style-type: none;
+    text-align:left;
+}
+
+
+.form-container {
+    box-shadow: 0 0 10px rgba(134, 0, 0, 0.5);
+    width: 250px;
+    height: 110px;
+    border-radius: 10px;
+    
+  }
+
+  #uno{
+    height: 1opx;
+    text-align: center;
+  }
+
+
