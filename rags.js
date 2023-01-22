@@ -38,3 +38,33 @@ function UpdateCatalogue() {
       .join(", ")}<br/>`;
   });
 }
+
+let outfitPairs = {
+  red: ["Shirt", "Pants"],
+  white: ["Shirt", "Pants"],
+  black: ["Shirt", "Pants"],
+};
+
+function seedColorsDropdown() {
+  let ok = document.getElementById("ok");
+
+  for (color of allColors) {
+    ok.innerHTML += `<option value="${color}">${color}</option>`;
+  }
+}
+
+
+// Add a submit event listener to the form
+function shout() {
+  // Clear the form input values
+  let color = document.getElementById("ok").value;
+  let Catalogue = document.getElementById("Catalogue");
+  let outFits = outfitPairs[color];
+
+  // Update the catalogue
+  Catalogue.innerHTML += `
+      <p>Today's fits : ${outFits.join(", ")}</p>
+    `;
+}
+
+seedColorsDropdown();
