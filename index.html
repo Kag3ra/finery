@@ -12,12 +12,21 @@
     </p>
 
     <p>How's your wardrobe looking?</p>
+    <button onclick="Randomize()">Randomize</button>
 
-    <form id="form" class="form-container" onsubmit="AddCloth(event)">
+    <form class="form-container" onsubmit="AddCloth(event)">
       <label for="type">Type:</label>
       <select name="type" id="typeSelect" required></select>
       <label for="color">Color:</label>
       <select name="color" id="colorSelect" required></select>
+      <label for="name">Cloth Name</label>
+      <input
+        type="text"
+        id="clothName"
+        placeholder="e.g red silk shirt"
+        required
+        autocomplete="off"
+      />
       <button type="submit">Add</button>
     </form>
 
@@ -25,16 +34,16 @@
     <div id="catalogue"></div>
 
     <p>What color are you feeling today?</p>
-    <div class="container">
-      <ul>
-        <br />
+    <form class="form-container" onsubmit="FixOutfit(event)">
+      <label for="color">Color:</label>
+      <select name="color" id="colorOutfitSelect" required></select>
+      <button type="submit">Find my Outfit</button>
+    </form>
 
-        <label>Color</label>
-        <select name="Namee" id="ok"></select>
-        <br />
-        <button id="genereate" onclick="shout()">Fit</button>
     <h2>FitFix</h2>
-        <div id="Catalogue"></div>
+    <div id="fitfix">
+      
+    </div>
   </body>
 
   <script type="text/javascript" src="rags.js"></script>

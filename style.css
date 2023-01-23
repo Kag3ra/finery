@@ -19,6 +19,12 @@ ul {
   flex-direction: column;
 }
 
+.form-container > input {
+  padding: 5%;
+  border-radius: 10px;
+  border-color: inherit;
+  margin-bottom: 10px;
+}
 .form-container > select {
   margin-bottom: 10px;
   padding: 5%;
@@ -42,27 +48,17 @@ ul {
   text-align: center;
 }
 
-.catalogueType,
 .catalogueColor {
   text-transform: capitalize;
 }
 
-#catalogue {
-  height: 150px;
-}
-
-.container{
+.container {
   height: 70px;
   box-shadow: 0 0 10px rgba(14, 0, 0, 0.5);
   width: 150px;
   border-radius: 10px;
 }
 
-.two{
+.two {
   height: 100px;
-}
-
-#Catalogue {
-  height: 180px;
-  
 }
